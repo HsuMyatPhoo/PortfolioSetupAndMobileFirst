@@ -20,27 +20,28 @@ body {
 header {
   width: 90%;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   position: fixed;
-  top: 20px;
+  top: 2em;
   left: 5%;
 }
 
 .logo {
-  font-family: "Inter";
+  font-family: 'Inter';
   font-size: 25px;
   font-weight: 800;
   color: var(--neutral--);
 }
 
-/* header .menu-icon {
-    float: right;
-} */
+header .menu-icon {
+  cursor: pointer;
+}
 
 header .menu-icon div {
   width: 24px;
   height: 4px;
-  background-color: black; 
+  background-color: black;
 }
 
 header .menu-icon div:nth-child(2) {
@@ -52,6 +53,80 @@ header .nav {
   display: none;
   cursor: pointer;
 }
+
+/* This is click action on menu  */
+
+.navheader {
+  width: 100%;
+  height:100%;
+  background: rgba(0, 0, 0, 0.97);
+  padding-top: 2em;
+  top: 0;
+  left: 0;
+  flex-direction: row-reverse;
+}
+
+.navheader .logo {
+  display: none ;
+}
+
+.navheader .menu-icon {
+  float: right;
+  margin-right: 5%;
+}
+
+
+.navheader .menu-icon div:first-child {
+  background-color: white;
+  margin-bottom: 10px;
+  transform: rotate(45deg) translateX(5%);
+  transform-origin: top left;
+
+}
+
+.navheader .menu-icon  div:nth-child(2) {
+  display: none;
+}
+
+.navheader .menu-icon div:last-child {
+  background-color: white;
+  margin-bottom: 10px;
+  
+  transform:  translateY(50%) rotate(-45deg);
+  transform-origin: bottom left;
+}
+
+.navheader .nav{
+  display: block;
+  width: 100%;
+  height: 100vh;
+}
+
+.navheader .nav ul {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top: 15%;
+}
+
+.navheader .nav ul li {
+  font-size: 15px;
+  font-weight: bold;
+  width: 100%;
+  color: white;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+
+
+
+
+
+
 
 .container {
   clear: both;
@@ -74,7 +149,6 @@ header .nav {
   color: var(--neutral--);
   margin: 0 7%;
   line-height: 52px;
-  letter-spacing: 0em;
   text-align: left;
 }
 
@@ -88,8 +162,8 @@ header .nav {
   max-width: 580px;
   color: var(--neutral--);
   line-height: 28px;
-  text-align: left;  
-  margin:0 7%;
+  text-align: left; 
+  margin: 0 7%;
   padding: 1.5em 0;
 }
 
@@ -146,7 +220,7 @@ header .nav {
 
 @media screen and (max-width: 376px){
   
- .container{
+.container {
   margin: auto 4%;
  }
 }
@@ -188,7 +262,10 @@ header .nav {
     padding-top: 10em;
   }
 
-  .homepage h1,.homepage p,.homepage a,.homepage div {
+  .homepage h1,
+  .homepage p,
+  .homepage a,
+  .homepage div {
    width: 70%;
    margin-left: 15% !important;
   }
@@ -238,7 +315,7 @@ header .nav {
   background-color: #EBF0EE;
 }
 
-.project .card{
+.project .card {
   text-align: center;
   height: 285px;
   background-color: #fff;
@@ -418,9 +495,7 @@ header .nav {
   font-size: 24px;
   color: var(--neutral--);
   line-height: 32px;
-  letter-spacing: 0em;
   text-align: center;
-
 }
 
 .card .languages {
@@ -544,8 +619,8 @@ form .email {
   justify-content: space-between;
 }
 
-form .fname,
-form .lname {
+.fname,
+.lname {
   width: 48%;
 }
 
@@ -625,9 +700,9 @@ form button.gintouch {
   }
 
   form .name,
-  .fname,
-  .lname,
-  .email {
+  form .fname,
+  form .lname,
+  form .email {
     margin: 8px 0;
   }
 }

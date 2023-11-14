@@ -17,9 +17,9 @@
 </head>
 <body>
    
-    <header>
+    <header class="" id="header">
         <p class="logo">My Logo</p>
-        <section class="menu-icon">
+        <section class="menu-icon"  onclick="navicon()">
             <div></div>
             <div></div>
             <div></div>
@@ -27,7 +27,7 @@
         
         <nav class="nav">
             <ul>
-                <li>Portfolio</li>
+                <li >Portfolio</li>
                 <li>About</li>
                 <li>Contact</li>
             </ul>
@@ -245,7 +245,12 @@
     </footer>
     
 
-    
+    <script>
+        function navicon(){
+          let header = document.getElementById("header"); 
+           header.classList.toggle("navheader");
+        }
+    </script>
     
 </body>
 </html>
